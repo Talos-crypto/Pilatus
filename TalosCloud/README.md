@@ -1,5 +1,6 @@
-# The Talos Cloud backend
-TODO
+# The Talos Cloud Backend
+
+## Setup
 
 ## Used Application Server and Database
 * [glassfish4](https://glassfish.java.net/)
@@ -11,4 +12,4 @@ TODO
 * [Google API Client Libraries](https://developers.google.com/api-client-library/)
 * [Google Guava](https://github.com/google/guava)
 * [MySQLDriver](https://dev.mysql.com/downloads/connector/j/)
-* [Appache Commons](https://commons.apache.org/)
+* [Apache Commons](https://commons.apache.org/)

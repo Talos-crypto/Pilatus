@@ -47,7 +47,7 @@ import java.util.Properties;
 
 /**
  * Manages the golbal settings of the appliaction
- * By providing a talos.properties file the settings can be customized.
+ * By providing a talosexample.properties file the settings can be customized.
  * (In glassfish4 put the file in the /glassfish4/glassfish/domains/domain1/config directory)
  */
 public class SystemUtil {
@@ -73,7 +73,7 @@ public class SystemUtil {
     public static final boolean SECURITY_OFF_DEBUG = false;
     public static boolean DEBUG_AUTH = false;
 
-    public static final String CONFIG_FILE ="talos.properties";
+    public static final String CONFIG_FILE ="talosexample.properties";
 
     static {
         File config = new File(CONFIG_FILE);
