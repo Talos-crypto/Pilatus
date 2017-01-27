@@ -1,9 +1,3 @@
-//
-// Created by lubu on 25.01.17.
-//
-
-
-
 /*
  * Copyright (c) 2016, Institute for Pervasive Computing, ETH Zurich.
  * All rights reserved.
