@@ -17,7 +17,6 @@ import util.MessageUtil;
 import util.SystemUtil;
 import util.User;
 
-import java.sql.ResultSet;
 import java.util.List;
 
 /*

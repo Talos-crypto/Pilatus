@@ -2,15 +2,12 @@ package main;
 
 import auth.DebugAuthenticator;
 import auth.TokenIDAuthenticator;
-import org.restlet.security.Authenticator;
-import resources.*;
 import org.restlet.Application;
 import org.restlet.Restlet;
 import org.restlet.routing.Router;
+import org.restlet.security.Authenticator;
+import resources.*;
 import util.SystemUtil;
-
-import java.io.File;
-import java.io.IOException;
 
 /*
  * Copyright (c) 2016, Institute for Pervasive Computing, ETH Zurich.

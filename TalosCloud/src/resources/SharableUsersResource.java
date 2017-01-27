@@ -2,7 +2,6 @@ package resources;
 
 import database.DBAccessAuthenticate;
 import org.json.JSONException;
-import org.json.JSONObject;
 import org.restlet.data.MediaType;
 import org.restlet.representation.Representation;
 import org.restlet.representation.StringRepresentation;

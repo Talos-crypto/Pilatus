@@ -3,11 +3,8 @@ package resources;
 
 import org.restlet.representation.Representation;
 import org.restlet.representation.StringRepresentation;
-import org.restlet.resource.Post;
 import org.restlet.resource.ResourceException;
 import org.restlet.resource.ServerResource;
-
-import java.io.IOException;
 
 /*
  * Copyright (c) 2016, Institute for Pervasive Computing, ETH Zurich.

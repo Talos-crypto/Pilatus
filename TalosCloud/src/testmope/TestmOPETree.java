@@ -7,11 +7,14 @@ import mopetree.mOPEUpdateSummary;
 import org.junit.Test;
 
 import java.math.BigInteger;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Random;
 
 import static junit.framework.Assert.assertEquals;
 import static junit.framework.Assert.assertTrue;
-import static junit.framework.TestCase.*;
+import static junit.framework.TestCase.fail;
 
 /*
  * Copyright (c) 2016, Institute for Pervasive Computing, ETH Zurich.

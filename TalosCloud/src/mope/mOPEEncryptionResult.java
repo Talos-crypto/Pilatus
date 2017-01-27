@@ -1,7 +1,5 @@
 package mope;
 
-import mopetree.mOPEUpdateSummary;
-
 import java.math.BigInteger;
 
 /*

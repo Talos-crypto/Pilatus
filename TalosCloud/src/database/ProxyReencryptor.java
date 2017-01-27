@@ -1,13 +1,15 @@
 package database;
 
 import crypto.CRTPreRelic;
-import crypto.PRERelic;
-import crypto.PRERelic.*;
+import crypto.PRERelic.PREToken;
 import util.User;
 
 import java.io.Closeable;
 import java.io.IOException;
-import java.sql.*;
+import java.sql.CallableStatement;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ExecutorService;

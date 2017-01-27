@@ -5,7 +5,10 @@ import util.User;
 
 import java.io.IOException;
 import java.math.BigDecimal;
-import java.sql.*;
+import java.sql.CallableStatement;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 /*
  * Copyright (c) 2016, Institute for Pervasive Computing, ETH Zurich.

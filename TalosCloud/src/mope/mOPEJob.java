@@ -1,8 +1,6 @@
 package mope;
 
 import database.ImOPEDBInterface;
-import database.mOPEDBInterface;
-import mopetree.mOPEUpdateSummary;
 import util.User;
 
 /*

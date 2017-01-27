@@ -1,12 +1,10 @@
 package crypto;
 
-import org.restlet.engine.util.Base64;
 import com.mysql.jdbc.Driver;
-import org.junit.Assert;
 import org.junit.Test;
-import util.User;
+import org.restlet.engine.util.Base64;
 
-import java.io.*;
+import java.io.IOException;
 import java.math.BigInteger;
 import java.sql.*;
 import java.util.ArrayList;

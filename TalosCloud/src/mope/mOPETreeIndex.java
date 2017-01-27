@@ -1,8 +1,5 @@
 package mope;
 
-import java.sql.ResultSet;
-import java.sql.SQLException;
-
 /*
  * Copyright (c) 2016, Institute for Pervasive Computing, ETH Zurich.
  * All rights reserved.

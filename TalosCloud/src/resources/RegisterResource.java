@@ -1,18 +1,16 @@
 package resources;
 
-import database.DBAccessAuthenticate;
 import auth.ITokenVerifier;
 import auth.TokenVerifierFactory;
-import util.MessageUtil;
-import util.User;
+import database.DBAccessAuthenticate;
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.restlet.data.Status;
 import org.restlet.representation.Representation;
-import org.restlet.representation.StringRepresentation;
 import org.restlet.resource.ResourceException;
 import org.restlet.resource.ServerResource;
+import util.MessageUtil;
 import util.SystemUtil;
+import util.User;
 
 /*
  * Copyright (c) 2016, Institute for Pervasive Computing, ETH Zurich.

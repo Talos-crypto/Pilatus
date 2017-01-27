@@ -1,8 +1,5 @@
 package auth;
 
-import auth.ITokenVerifier;
-import auth.ServerGoogleAuth;
-
 /*
  * Copyright (c) 2016, Institute for Pervasive Computing, ETH Zurich.
  * All rights reserved.
