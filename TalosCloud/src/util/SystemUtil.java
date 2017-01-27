@@ -73,7 +73,7 @@ public class SystemUtil {
     public static final boolean SECURITY_OFF_DEBUG = false;
     public static boolean DEBUG_AUTH = false;
 
-    public static final String CONFIG_FILE ="talosexample.properties";
+    public static final String CONFIG_FILE ="talos.properties";
 
     static {
         File config = new File(CONFIG_FILE);
