@@ -6,7 +6,6 @@ import com.fasterxml.jackson.databind.node.ObjectNode;
 import database.ResultSetSerializer;
 import mope.messages.mOPEClientAnswer;
 import mope.messages.mOPEClientCipher;
-import mope.messages.mOPEResponseMessage;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;

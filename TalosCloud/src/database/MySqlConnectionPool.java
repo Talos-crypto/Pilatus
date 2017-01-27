@@ -2,10 +2,10 @@ package database;
 
 import util.SystemUtil;
 
+import javax.naming.NamingException;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.HashMap;
-import javax.naming.NamingException;
 
 /*
  * Copyright (c) 2016, Institute for Pervasive Computing, ETH Zurich.

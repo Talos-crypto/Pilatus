@@ -1,15 +1,23 @@
 package testmope;
 
-import database.*;
+import com.mysql.jdbc.Driver;
+import database.CommandDescription;
+import database.DBAccessAuthenticate;
+import database.MySqlConnectionPool;
+import database.mOPEDBInterface;
 import mope.mOPEInteractionState;
 import mope.mOPEInteractionTree;
 import mope.mOPEJob;
-import mope.messages.*;
+import mope.messages.mOPEClientStepMessage;
+import mope.messages.mOPEResponseMessage;
+import mope.messages.mOPEResultMessage;
 import mopetree.Tuple;
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
+import util.MessageUtil;
+import util.SystemUtil;
+import util.User;
 
 import javax.sql.DataSource;
 import java.io.IOException;
@@ -23,13 +31,7 @@ import java.util.concurrent.CyclicBarrier;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Logger;
 
-import com.mysql.jdbc.Driver;
-import util.MessageUtil;
-import util.SystemUtil;
-import util.User;
-
 import static junit.framework.Assert.assertEquals;
-import static junit.framework.Assert.assertFalse;
 import static junit.framework.Assert.assertTrue;
 import static junit.framework.TestCase.fail;
 

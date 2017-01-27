@@ -1,9 +1,7 @@
 package mopetree;
 
 import java.math.BigInteger;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 /*
  * Copyright (c) 2016, Institute for Pervasive Computing, ETH Zurich.

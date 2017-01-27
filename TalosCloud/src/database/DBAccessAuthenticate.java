@@ -1,9 +1,5 @@
 package database;
 
-import com.google.common.cache.CacheBuilder;
-import com.google.common.cache.CacheLoader;
-import com.google.common.cache.LoadingCache;
-import org.apache.commons.codec.binary.Base64;
 import util.User;
 
 import java.sql.Connection;
@@ -12,8 +8,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.TimeUnit;
 
 /*
  * Copyright (c) 2016, Institute for Pervasive Computing, ETH Zurich.

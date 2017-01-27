@@ -1,7 +1,5 @@
 package mope.messages;
 
-import java.awt.*;
-
 /*
  * Copyright (c) 2016, Institute for Pervasive Computing, ETH Zurich.
  * All rights reserved.

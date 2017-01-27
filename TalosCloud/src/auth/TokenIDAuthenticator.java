@@ -1,7 +1,6 @@
 package auth;
 
 import database.DBAccessAuthenticate;
-import util.User;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.restlet.Context;
@@ -10,6 +9,7 @@ import org.restlet.Response;
 import org.restlet.data.Status;
 import org.restlet.security.Authenticator;
 import util.SystemUtil;
+import util.User;
 
 /*
  * Copyright (c) 2016, Institute for Pervasive Computing, ETH Zurich.

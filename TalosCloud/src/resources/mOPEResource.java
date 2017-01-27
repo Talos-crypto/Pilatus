@@ -1,6 +1,9 @@
 package resources;
 
-import com.google.common.cache.*;
+import com.google.common.cache.Cache;
+import com.google.common.cache.CacheBuilder;
+import com.google.common.cache.RemovalListener;
+import com.google.common.cache.RemovalNotification;
 import database.CommandDescription;
 import database.DBAccessAuthenticate;
 import mope.mOPEException;

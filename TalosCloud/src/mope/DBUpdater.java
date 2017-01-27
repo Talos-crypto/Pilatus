@@ -1,10 +1,7 @@
 package mope;
 
-import database.CommandDescription;
-import database.DBAccessAuthenticate;
 import database.ImOPEDBInterface;
 import database.mOPEDBInterface;
-import util.User;
 
 import java.util.ArrayList;
 import java.util.HashMap;
