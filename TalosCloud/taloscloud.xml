@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="taloscloud" default="all">
+  
+  
+  <property file="taloscloud.properties"/>
+  <!-- Uncomment the following property if no tests compilation is needed -->
+  <!-- 
+  <property name="skip.tests" value="true"/>
+   -->
+  
+  <!-- Compiler options -->
+  
+  <property name="compiler.debug" value="on"/>
+  <property name="compiler.generate.no.warnings" value="off"/>
+  <property name="compiler.args" value=""/>
+  <property name="compiler.max.memory" value="700m"/>
+  <patternset id="ignored.files">
+    <exclude name="**/*.hprof/**"/>
+    <exclude name="**/*.pyc/**"/>
+    <exclude name="**/*.pyo/**"/>
+    <exclude name="**/*.rbc/**"/>
+    <exclude name="**/*.yarb/**"/>
+    <exclude name="**/*~/**"/>
+    <exclude name="**/.DS_Store/**"/>
+    <exclude name="**/.git/**"/>
+    <exclude name="**/.hg/**"/>
+    <exclude name="**/.svn/**"/>
+    <exclude name="**/CVS/**"/>
+    <exclude name="**/RCS/**"/>
+    <exclude name="**/SCCS/**"/>
+    <exclude name="**/__pycache__/**"/>
+    <exclude name="**/_svn/**"/>
+    <exclude name="**/rcs/**"/>
+    <exclude name="**/vssver.scc/**"/>
+    <exclude name="**/vssver2.scc/**"/>
+  </patternset>
+  <patternset id="library.patterns">
+    <include name="*.war"/>
+    <include name="*.swc"/>
+    <include name="*.apk"/>
+    <include name="*.zip"/>
+    <include name="*.egg"/>
+    <include name="*.ane"/>
+    <include name="*.jar"/>
+    <include name="*.ear"/>
+  </patternset>
+  <patternset id="compiler.resources">
+    <exclude name="**/?*.java"/>
+    <exclude name="**/?*.form"/>
+    <exclude name="**/?*.class"/>
+    <exclude name="**/?*.groovy"/>
+    <exclude name="**/?*.scala"/>
+    <exclude name="**/?*.flex"/>
+    <exclude name="**/?*.kt"/>
+    <exclude name="**/?*.clj"/>
+    <exclude name="**/?*.aj"/>
+  </patternset>
+  
+  
+  <!-- Project Libraries -->
+  
+  <path id="library.lib.classpath">
+    <pathelement location="${basedir}/web/WEB-INF/lib/commons-codec-1.6.jar"/>
+    <pathelement location="${basedir}/web/WEB-INF/lib/commons-logging-1.1.1.jar"/>
+    <pathelement location="${basedir}/web/WEB-INF/lib/google-api-client-1.20.0.jar"/>
+    <pathelement location="${basedir}/web/WEB-INF/lib/google-http-client-1.20.0.jar"/>
+    <pathelement location="${basedir}/web/WEB-INF/lib/google-http-client-jackson2-1.20.0.jar"/>
+    <pathelement location="${basedir}/web/WEB-INF/lib/google-oauth-client-1.20.0.jar"/>
+    <pathelement location="${basedir}/web/WEB-INF/lib/guava-jdk5-13.0.jar"/>
+    <pathelement location="${basedir}/web/WEB-INF/lib/hamcrest-core-1.3.jar"/>
+    <pathelement location="${basedir}/web/WEB-INF/lib/httpclient-4.0.1.jar"/>
+    <pathelement location="${basedir}/web/WEB-INF/lib/httpcore-4.0.1.jar"/>
+    <pathelement location="${basedir}/web/WEB-INF/lib/jackson-annotations-2.6.4.jar"/>
+    <pathelement location="${basedir}/web/WEB-INF/lib/jackson-core-2.1.3.jar"/>
+    <pathelement location="${basedir}/web/WEB-INF/lib/jackson-core-2.6.4.jar"/>
+    <pathelement location="${basedir}/web/WEB-INF/lib/jackson-databind-2.6.4.jar"/>
+    <pathelement location="${basedir}/web/WEB-INF/lib/json-20090211.jar"/>
+    <pathelement location="${basedir}/web/WEB-INF/lib/jsr305-1.3.9.jar"/>
+    <pathelement location="${basedir}/web/WEB-INF/lib/junit-4.12.jar"/>
+    <pathelement location="${basedir}/web/WEB-INF/lib/mysql-connector-java-5.1.34-bin.jar"/>
+    <pathelement location="${basedir}/web/WEB-INF/lib/org.restlet.ext.servlet.jar"/>
+    <pathelement location="${basedir}/web/WEB-INF/lib/org.restlet.jar"/>
+  </path>
+  
+  
+  <!-- Application Server Libraries -->
+  
+  <!-- Modules -->
+  
+  
+  <!-- Module TalosCloud -->
+  
+  <dirname property="module.taloscloud.basedir" file="${ant.file}"/>
+  
+  
+  
+  <property name="compiler.args.taloscloud" value="-encoding UTF-8 -source 8 -target 8 ${compiler.args}"/>
+  
+  <property name="taloscloud.output.dir" value="${module.taloscloud.basedir}/out/production/TalosCloud"/>
+  <property name="taloscloud.testoutput.dir" value="${module.taloscloud.basedir}/out/test/TalosCloud"/>
+  
+  <path id="taloscloud.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="taloscloud.module.production.classpath">
+    <path refid="library.lib.classpath"/>
+  </path>
+  
+  <path id="taloscloud.runtime.production.module.classpath">
+    <pathelement location="${taloscloud.output.dir}"/>
+    <path refid="library.lib.classpath"/>
+  </path>
+  
+  <path id="taloscloud.module.classpath">
+    <pathelement location="${taloscloud.output.dir}"/>
+    <path refid="library.lib.classpath"/>
+  </path>
+  
+  <path id="taloscloud.runtime.module.classpath">
+    <pathelement location="${taloscloud.testoutput.dir}"/>
+    <pathelement location="${taloscloud.output.dir}"/>
+    <path refid="library.lib.classpath"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.taloscloud">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.taloscloud">
+    <patternset refid="excluded.from.module.taloscloud"/>
+  </patternset>
+  
+  <path id="taloscloud.module.sourcepath">
+    <dirset dir="${module.taloscloud.basedir}">
+      <include name="src"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.taloscloud" depends="compile.module.taloscloud.production,compile.module.taloscloud.tests" description="Compile module TalosCloud"/>
+  
+  <target name="compile.module.taloscloud.production" description="Compile module TalosCloud; production classes">
+    <mkdir dir="${taloscloud.output.dir}"/>
+    <javac destdir="${taloscloud.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true">
+      <compilerarg line="${compiler.args.taloscloud}"/>
+      <bootclasspath refid="taloscloud.module.bootclasspath"/>
+      <classpath refid="taloscloud.module.production.classpath"/>
+      <src refid="taloscloud.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.taloscloud"/>
+    </javac>
+    
+    <copy todir="${taloscloud.output.dir}">
+      <fileset dir="${module.taloscloud.basedir}/src">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.taloscloud.tests" depends="compile.module.taloscloud.production" description="compile module TalosCloud; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.taloscloud" description="cleanup module">
+    <delete dir="${taloscloud.output.dir}"/>
+    <delete dir="${taloscloud.testoutput.dir}"/>
+  </target>
+  
+  <target name="init" description="Build initialization">
+    <!-- Perform any build initialization in this target -->
+  </target>
+  
+  <target name="clean" depends="clean.module.taloscloud, clean.artifact.taloscloud" description="cleanup all"/>
+  
+  <target name="build.modules" depends="init, clean, compile.module.taloscloud" description="build all modules"/>
+  
+  <target name="init.artifacts">
+    <property name="artifacts.temp.dir" value="${basedir}/__artifacts_temp"/>
+    <property name="artifact.output.taloscloud" value="${basedir}/out/artifacts/TalosCloud"/>
+    <property name="artifact.output.taloscloudweb" value="${basedir}/out/artifacts/TalosCloudWeb"/>
+    <mkdir dir="${artifacts.temp.dir}"/>
+    <property name="temp.jar.path.TalosCloudWeb.war" value="${artifacts.temp.dir}/TalosCloudWeb.war"/>
+  </target>
+  
+  <target name="clean.artifact.taloscloud" description="clean TalosCloud artifact output">
+    <delete dir="${artifact.output.taloscloud}"/>
+  </target>
+  
+  <target name="artifact.taloscloud" depends="init.artifacts, compile.module.taloscloud" description="Build &#39;TalosCloud&#39; artifact">
+    <mkdir dir="${artifact.output.taloscloud}"/>
+    <copy todir="${artifact.output.taloscloud}">
+      <fileset dir="${basedir}/web"/>
+    </copy>
+    <mkdir dir="${artifact.output.taloscloud}/WEB-INF"/>
+    <copy file="${basedir}/web/WEB-INF/web.xml" tofile="${artifact.output.taloscloud}/WEB-INF/web.xml"/>
+    <mkdir dir="${artifact.output.taloscloud}/WEB-INF"/>
+    <mkdir dir="${artifact.output.taloscloud}/WEB-INF/classes"/>
+    <copy todir="${artifact.output.taloscloud}/WEB-INF/classes">
+      <fileset dir="${taloscloud.output.dir}"/>
+    </copy>
+  </target>
+  
+  <target name="artifact.taloscloudweb" depends="init.artifacts, compile.module.taloscloud" description="Build &#39;TalosCloudWeb&#39; artifact">
+    <property name="artifact.temp.output.taloscloudweb" value="${artifacts.temp.dir}/TalosCloudWeb"/>
+    <mkdir dir="${artifact.temp.output.taloscloudweb}"/>
+    <zip destfile="${temp.jar.path.TalosCloudWeb.war}">
+      <zipfileset dir="${taloscloud.output.dir}" prefix="WEB-INF/classes"/>
+      <zipfileset file="${basedir}/web/WEB-INF/lib/jackson-core-2.6.4.jar" prefix="WEB-INF/lib"/>
+      <zipfileset file="${basedir}/web/WEB-INF/lib/jsr305-1.3.9.jar" prefix="WEB-INF/lib"/>
+      <zipfileset file="${basedir}/web/WEB-INF/lib/httpclient-4.0.1.jar" prefix="WEB-INF/lib"/>
+      <zipfileset file="${basedir}/web/WEB-INF/lib/commons-logging-1.1.1.jar" prefix="WEB-INF/lib"/>
+      <zipfileset file="${basedir}/web/WEB-INF/lib/commons-codec-1.6.jar" prefix="WEB-INF/lib"/>
+      <zipfileset file="${basedir}/web/WEB-INF/lib/jackson-databind-2.6.4.jar" prefix="WEB-INF/lib"/>
+      <zipfileset file="${basedir}/web/WEB-INF/lib/google-api-client-1.20.0.jar" prefix="WEB-INF/lib"/>
+      <zipfileset file="${basedir}/web/WEB-INF/lib/httpcore-4.0.1.jar" prefix="WEB-INF/lib"/>
+      <zipfileset file="${basedir}/web/WEB-INF/lib/org.restlet.ext.servlet.jar" prefix="WEB-INF/lib"/>
+      <zipfileset file="${basedir}/web/WEB-INF/lib/google-http-client-1.20.0.jar" prefix="WEB-INF/lib"/>
+      <zipfileset file="${basedir}/web/WEB-INF/lib/jackson-annotations-2.6.4.jar" prefix="WEB-INF/lib"/>
+      <zipfileset file="${basedir}/web/WEB-INF/lib/hamcrest-core-1.3.jar" prefix="WEB-INF/lib"/>
+      <zipfileset file="${basedir}/web/WEB-INF/lib/mysql-connector-java-5.1.34-bin.jar" prefix="WEB-INF/lib"/>
+      <zipfileset file="${basedir}/web/WEB-INF/lib/google-oauth-client-1.20.0.jar" prefix="WEB-INF/lib"/>
+      <zipfileset file="${basedir}/web/WEB-INF/lib/google-http-client-jackson2-1.20.0.jar" prefix="WEB-INF/lib"/>
+      <zipfileset file="${basedir}/web/WEB-INF/lib/guava-jdk5-13.0.jar" prefix="WEB-INF/lib"/>
+      <zipfileset file="${basedir}/web/WEB-INF/lib/org.restlet.jar" prefix="WEB-INF/lib"/>
+      <zipfileset file="${basedir}/web/WEB-INF/lib/junit-4.12.jar" prefix="WEB-INF/lib"/>
+      <zipfileset file="${basedir}/web/WEB-INF/lib/json-20090211.jar" prefix="WEB-INF/lib"/>
+      <zipfileset file="${basedir}/web/WEB-INF/lib/jackson-core-2.1.3.jar" prefix="WEB-INF/lib"/>
+      <zipfileset dir="${basedir}/web"/>
+      <zipfileset file="${basedir}/web/WEB-INF/web.xml" prefix="WEB-INF"/>
+    </zip>
+    <copy file="${temp.jar.path.TalosCloudWeb.war}" tofile="${artifact.temp.output.taloscloudweb}/TalosCloudWeb.war"/>
+  </target>
+  
+  <target name="build.all.artifacts" depends="artifact.taloscloud, artifact.taloscloudweb" description="Build all artifacts">
+    <mkdir dir="${artifact.output.taloscloudweb}"/>
+    <copy todir="${artifact.output.taloscloudweb}">
+      <fileset dir="${artifact.temp.output.taloscloudweb}"/>
+    </copy>
+    
+    <!-- Delete temporary files -->
+    <delete dir="${artifacts.temp.dir}"/>
+  </target>
+  
+  <target name="all" depends="build.modules, build.all.artifacts" description="build all"/>
+</project>
