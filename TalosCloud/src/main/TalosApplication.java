@@ -9,6 +9,9 @@ import org.restlet.security.Authenticator;
 import resources.*;
 import util.SystemUtil;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 /*
  * Copyright (c) 2016, Institute for Pervasive Computing, ETH Zurich.
  * All rights reserved.
@@ -51,6 +54,17 @@ import util.SystemUtil;
  */
 public class TalosApplication extends Application {
 
+    private static void setAndLoadProperties(){
+        Pattern pattern = Pattern.compile(".*/(.+)/WEB-INF/.*");
+        String tmp = TalosApplication.class.getProtectionDomain().getCodeSource().getLocation().toString();
+        Matcher matcher = pattern.matcher(tmp);
+        if (matcher.find())
+        {
+            SystemUtil.CONFIG_FILE = matcher.group(1) + ".properties";
+        }
+        SystemUtil.loadProperties();
+    }
+
     /**
      * Creates a root Restlet that will receive all incoming calls.
      */
@@ -59,6 +73,8 @@ public class TalosApplication extends Application {
         Router startRouter = new Router(getContext());
         Router protectedRouter = new Router(getContext());
         Authenticator auth;
+
+        setAndLoadProperties();
 
         if(SystemUtil.DEBUG_AUTH) {
             auth = new DebugAuthenticator(getContext());

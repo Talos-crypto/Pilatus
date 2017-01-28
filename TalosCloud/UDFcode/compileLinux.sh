@@ -66,7 +66,7 @@ make
 if [ $? -eq 0 ]; then
     sudo mv libPRE_RELIC_UDF.so $MY_SQL_LOC/plugin/PRE_RELIC_UDF.so
 else
-    echo "Compile CRT_GAMAL_AGR FAILED"
+    echo "Compile PRE_RELIC_UDF.so FAILED"
 fi
 
 sudo cp /usr/local/lib/librelic.so /usr/lib/
