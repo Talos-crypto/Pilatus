@@ -1,5 +1,6 @@
 #!/bin/bash
 LOCAL_PATH=$(cd -P -- "$(dirname -- "$0")" && pwd -P)
+CUR_PATH = (pwd)
 
 sudo apt-get update
 
@@ -13,7 +14,7 @@ if [ "" == "$PKG_MYSQL_OK" ]; then
 fi
 
 echo "Step 1.2: Compile and install UDF's"
-cd $LOCAL_PATH/TalosCloud/UDFcode
+cd $LOCAL_PATH/../TalosCloud/UDFcode
 bash ./compileLinux.sh
 cd $LOCAL_PATH
 
@@ -34,6 +35,7 @@ if [ "" == "$PKG_UNZIP_OK" ]; then
   sudo apt-get install unzip || { echo "failed installing unzip"; exit 1; }
 fi
 
+cd $LOCAL_PATH/../
 wget http://download.java.net/glassfish/4.1.1/release/glassfish-4.1.1.zip
 unzip glassfish-4.1.1.zip
 
@@ -43,8 +45,10 @@ unzip mysql-connector-java-5.1.40.zip
 mv ./mysql-connector-java-5.1.40/mysql-connector-java-5.1.40-bin.jar  .
 rm -r ./mysql-connector-java-5.1.40
 rm mysql-connector-java-5.1.40.zip
-cd $LOCAL_PATH
+
 
 ./glassfish4/bin/asadmin change-admin-password
 ./glassfish4/bin/asadmin start-domain
 ./glassfish4/bin/asadmin enable-secure-admin
+
+cd $CUR_PATH
