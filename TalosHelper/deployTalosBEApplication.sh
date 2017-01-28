@@ -8,8 +8,14 @@ if [ -z "$1" ]
     exit 1
 fi
 
-TALOS_APP_NAME=$1
+if [ -z "$2" ]
+  then
+    echo "argument <db_name> required"
+    exit 1
+fi
 
+TALOS_APP_NAME=$1
+dbname=$2
 
 if !(test -f $LOCAL_PATH/../TalosCloud/out/artifacts/TalosCloudWeb/TalosCloudWeb.war)
 then
@@ -36,7 +42,6 @@ $GF_CMD deploy $LOCAL_PATH/$TALOS_APP_NAME.war
 
 
 echo "Create Database for APP. Type in DB name"
-read dbname
 dbuser=$dbname
 dbpwd=talos
 
@@ -52,7 +57,7 @@ $GF_CMD create-jdbc-resource --connectionpoolid $APP_POOL $APP_RESOURCE
 $GF_CMD restart-domain
 
 
-export PROPERTIES=$'# This file defines the properties for the Talos EE Application 
+export PROPERTIES="# This file defines the properties for the Talos EE Application 
 # The server client id key from Google, needed for Authetication 
 # https://developers.google.com/identity/sign-in/android/backend-auth 
 googleAuthServerID = <google sign-in server id> 
@@ -64,7 +69,7 @@ debugAuthentication = false
 
 # The name of the MySql database connection pool resource
 # https://docs.oracle.com/cd/E19316-01/820-4335/gibzk/index.html
-dbConnPoolName = $APP_RESOURCE'
+dbConnPoolName = $APP_RESOURCE"
 
 echo "$PROPERTIES" > $LOCAL_PATH/../glassfish4/glassfish/domains/domain1/config/$TALOS_APP_NAME.properties
 
