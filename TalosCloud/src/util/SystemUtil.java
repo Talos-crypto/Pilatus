@@ -73,9 +73,9 @@ public class SystemUtil {
     public static final boolean SECURITY_OFF_DEBUG = false;
     public static boolean DEBUG_AUTH = false;
 
-    public static final String CONFIG_FILE ="talos.properties";
+    public static String CONFIG_FILE ="talos.properties";
 
-    static {
+    public static void loadProperties() {
         File config = new File(CONFIG_FILE);
         if(config.exists()) {
             BufferedInputStream stream = null;
@@ -101,7 +101,6 @@ public class SystemUtil {
             }
         }
     }
-
 
     public static String getIDToken(JSONObject jo) {
         try {
