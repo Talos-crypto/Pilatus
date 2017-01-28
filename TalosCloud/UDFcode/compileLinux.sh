@@ -10,11 +10,25 @@ if [ "" == "$PKG_MYSQL_DEV_OK" ]; then
   sudo apt-get install libmysqlclient-dev
 fi
 
+PKG_SSLDEV_DEV_OK=$(dpkg-query -W --showformat='${Status}\n' libssl-dev | grep "install ok installed")
+echo Checking for libssl-dev: $PKG_SSLDEV_DEV_OK
+if [ "" == "$PKG_SSLDEV_DEV_OK" ]; then
+  echo "No libssl-dev. Setting up libssl-dev."
+  sudo apt-get install libssl-dev
+fi
+
 PKG_CMAKE_OK=$(dpkg-query -W --showformat='${Status}\n' cmake | grep "install ok installed")
 echo Checking for cmake: $PKG_CMAKE_OK
 if [ "" == "$PKG_CMAKE_OK" ]; then
   echo "No cmake. Setting up cmake."
   sudo apt-get install cmake
+fi
+
+PKG_JDK_OK=$(dpkg-query -W --showformat='${Status}\n' default-jdk | grep "install ok installed")
+echo Checking for default-jdk: $PKG_JDK_OK
+if [ "" == "$PKG_JDK_OK" ]; then
+  echo "No default-jdk. Setting up default-jdk."
+  sudo apt-get install default-jdk || { echo "failed installing jdk"; exit 1; }
 fi
 
 gcc -w -g $(mysql_config --cflags) -shared -fPIC  -o ECElgamalUDF.so ECElgamalUDF.c  -lcrypto -lssl
@@ -45,7 +59,8 @@ else
     echo "Compile CRT_GAMAL_AGR FAILED"
 fi
 
-cd ../../mylsq/TalosCiphers/key-hom
+
+cd ../../TalosCiphers/pre-relic
 cmake .
 make
 if [ $? -eq 0 ]; then
@@ -53,6 +68,8 @@ if [ $? -eq 0 ]; then
 else
     echo "Compile CRT_GAMAL_AGR FAILED"
 fi
+
+sudo cp /usr/local/lib/librelic.so /usr/lib/
 
 echo "Create mysql UDFs on DB with user: root"
 mysql -hlocalhost -uroot -p < createUDF.sql
