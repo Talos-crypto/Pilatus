@@ -1,6 +1,6 @@
 #!/bin/bash
 LOCAL_PATH=$(cd -P -- "$(dirname -- "$0")" && pwd -P)
-CUR_PATH = (pwd)
+CUR_PATH=(pwd)
 
 if [ -z "$1" ]
   then
