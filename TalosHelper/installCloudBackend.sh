@@ -46,7 +46,7 @@ mv ./mysql-connector-java-5.1.40/mysql-connector-java-5.1.40-bin.jar  .
 rm -r ./mysql-connector-java-5.1.40
 rm mysql-connector-java-5.1.40.zip
 
-
+cd $LOCAL_PATH/../
 ./glassfish4/bin/asadmin change-admin-password
 ./glassfish4/bin/asadmin start-domain
 ./glassfish4/bin/asadmin enable-secure-admin
