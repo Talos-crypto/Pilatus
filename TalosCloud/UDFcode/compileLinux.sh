@@ -71,6 +71,8 @@ fi
 
 sudo cp /usr/local/lib/librelic.so /usr/lib/
 
+cd $LOCAL_PATH
+
 echo "Create mysql UDFs on DB with user: root"
 mysql -hlocalhost -uroot -p < createUDF.sql
 if [ $? -eq 0 ]; then
