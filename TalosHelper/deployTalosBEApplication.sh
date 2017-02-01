@@ -36,6 +36,8 @@ fi
 
 GF_CMD=$LOCAL_PATH/../glassfish4/bin/asadmin
 
+$GF_CMD login
+
 mv $LOCAL_PATH/../TalosCloud/out/artifacts/TalosCloudWeb/TalosCloudWeb.war $LOCAL_PATH/$TALOS_APP_NAME.war
 $GF_CMD start-domain
 $GF_CMD deploy $LOCAL_PATH/$TALOS_APP_NAME.war

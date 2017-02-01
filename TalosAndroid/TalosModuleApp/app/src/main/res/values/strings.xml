@@ -1,0 +1,39 @@
+<resources>
+    <string name="app_name">CryptStoreSensorApp</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Home</string>
+
+    <string name="ble_not_supported">BLE is not supported</string>
+    <string name="label_data">Data:</string>
+    <string name="label_device_address">Device address:</string>
+    <string name="label_state">State:</string>
+    <string name="no_data">No data</string>
+    <string name="connected">Connected</string>
+    <string name="disconnected">Disconnected (Please Wait)</string>
+    <string name="title_devices">BLE Device Scan</string>
+    <string name="error_bluetooth_not_supported">Bluetooth not supported.</string>
+    <string name="data1">Data1:</string>
+    <string name="data2">Data2:</string>
+    <string name="temperature">Temperature:</string>
+    <string name="humidity">Humidity:</string>
+
+    <string name="unknown_device">Unknown device</string>
+    <string name="unknown_characteristic">Unknown characteristic</string>
+    <string name="unknown_service">Unknown service</string>
+
+    <!-- Menu items -->
+    <string name="menu_connect">Connect</string>
+    <string name="menu_disconnect">Disconnect</string>
+    <string name="menu_scan">Scan</string>
+    <string name="menu_stop">Stop</string>
+    <string name="menu_refresh">Refresh</string>
+    <string name="title_activity_data">Sensors</string>
+    <string name="title_activity_data_sensor">SensorOverview</string>
+    <string name="title_activity_values">SensorValues</string>
+
+
+    <string name="Google_Client_ID">792880799776-2h12n12vl1bke8pp2jli4obnrjvp6fe6.apps.googleusercontent.com</string>
+    <string name="title_activity_login">LoginActivity</string>
+
+</resources>
