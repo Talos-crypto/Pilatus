@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="ch.ethz.inf.vs.talsomoduleapp">
+
+    <uses-feature
+        android:name="android.hardware.bluetooth_le"
+        android:required="true" />
+
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:screenOrientation="portrait"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".data.DataActivity"
+            android:label="@string/title_activity_data"
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="ch.ethz.inf.vs.talsomoduleapp.MainActivity" />
+        </activity>
+        <activity
+            android:name=".sensors.SensorMain"
+            android:label="LocalSensors"
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".sensors.SensorActivity"
+            android:label="SensorData"
+            android:parentActivityName=".sensors.SensorMain"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ble.BleActivity"
+            android:label="BleActivity"
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ble.DeviceControlActivity"
+            android:label="DeviceControlActivity"
+            android:parentActivityName=".ble.BleActivity"
+            android:screenOrientation="portrait" />
+
+        <service
+            android:name=".ble.BluetoothLeService"
+            android:enabled="true" />
+
+        <activity
+            android:name=".data.DataSensorActivity"
+            android:label="@string/title_activity_data_sensor"
+            android:parentActivityName=".data.DataActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".data.ValuesActivity"
+            android:label="@string/title_activity_values"
+            android:parentActivityName=".data.DataSensorActivity"
+            android:screenOrientation="portrait" />
+    </application>
+
+</manifest>
