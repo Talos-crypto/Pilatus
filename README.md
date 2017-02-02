@@ -7,7 +7,7 @@ The embedded version of the framework (designed for IoT devices with IP function
 
 
 ## Setup Example Applications
-We provide three exmaple Android applications, the [Sensor app](Talos-Android/TalosAndroid/TalosModuleApp/), the [Fitbit App](Talos-Android/TalosAndroid/TalosFitbitApp/) and the [Ava Health App](Talos-Android/TalosAndroid/TalosAvaApp/). Before running the applications serveral things have to be considered, which we will outline in the following tutorial.
+We provide three exmaple Android applications, the [Sensor App](https://github.com/Talos-crypto/Talos-Android/tree/master/TalosAndroid/TalosModuleApp), the [Fitbit App](https://github.com/Talos-crypto/Talos-Android/tree/master/TalosAndroid/TalosFitbitApp) and the [Ava Health App](https://github.com/Talos-crypto/Talos-Android/tree/master/TalosAndroid/TalosAvaApp). Before running the applications serveral things have to be considered, which we will outline in the following tutorial.
 
 ### Install Talos Cloud and Dependencies
 In first step we need to setup the Talos Cloud environment. We recommend using the Ubuntu operating system. You can either use a local machine or a cloud service such as AWS EC2, Azure etc. Make sure you know the IP of your machine (Needed by the Android applications) 
@@ -19,7 +19,7 @@ In first step we need to setup the Talos Cloud environment. We recommend using t
 After sucessfully completing this two steps, a mysql server sould be running containing the example application databases and functions and a glassfish 4 application server instance runs the three backend appliactions. You are ready for deploying the android applications.
 
 ### Install a Talos Android Example Application
-As mentioned above we provide three example Apllication. In this section we focus on the the [Sensor app](Talos-Android/TalosAndroid/TalosModuleApp/). You need a ARM based Andoird smartphone and a computer with Android Studio installed.
+As mentioned above we provide three example Apllication. In this section we focus on the the [Sensor App](https://github.com/Talos-crypto/Talos-Android/tree/master/TalosAndroid/TalosModuleApp). You need a ARM based Andoird smartphone and a computer with Android Studio installed.
 
 1. Install the [Android Studio](https://developer.android.com/studio/index.html) IDE.
 
