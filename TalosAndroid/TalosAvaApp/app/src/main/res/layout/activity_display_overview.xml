@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/lightBG">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:background="@color/heavierBG"
+            android:layout_marginTop="5dp"
+            android:layout_height="50dp">
+
+            <ImageButton
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/imageButton"
+                android:layout_weight="1"
+                android:src="@drawable/left"
+                android:scaleType="fitCenter"
+                android:background="@color/heavierBG"
+                android:padding="10dp"
+                android:onClick="onLeftClick" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="11.12.2016"
+                android:id="@+id/selectedDate"
+                android:layout_weight="0.5"
+                android:textAlignment="center"
+                android:padding="10dp" />
+
+            <ImageButton
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/imageButton2"
+                android:layout_gravity="right"
+                android:layout_weight="1"
+                android:src="@drawable/right"
+                android:scaleType="fitCenter"
+                android:background="@color/heavierBG"
+                android:adjustViewBounds="true"
+                android:padding="10dp"
+                android:onClick="onRightClick" />
+
+        </LinearLayout>
+
+        <ListView
+            android:layout_width="match_parent"
+            android:id="@+id/listView"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            android:layout_weight="0.5"
+            android:layout_height="80dp" />
+
+        <Button
+            android:text="Oval Data"
+            android:layout_width="match_parent"
+            android:id="@+id/toOvalView"
+            android:layout_weight="0.1"
+            android:background="@color/heavierBG"
+            android:layout_marginBottom="20dp"
+            android:onClick="onToOval"
+            android:textSize="24sp"
+            android:textColor="@color/lightBG"
+            android:elevation="0dp"
+            android:layout_height="10dp" />
+
+    </LinearLayout>
+
+</RelativeLayout>

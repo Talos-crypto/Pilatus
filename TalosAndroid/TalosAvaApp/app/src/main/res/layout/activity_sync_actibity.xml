@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context="ch.ethz.inf.vs.talosavaapp.activities.SyncActivity"
+    android:background="@color/lightBG">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="20dp"
+        android:weightSum="1">
+
+        <Button
+            android:text="Synchronize"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/button2"
+            android:layout_weight="0.17"
+            android:background="@color/heavierBG"
+            android:paddingBottom="10dp"
+            android:layout_marginBottom="20dp"
+            android:onClick="onSync"
+            android:textSize="24sp"
+            android:textColor="@color/lightBG" />
+
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/spinner"
+            android:layout_weight="0.17"
+            android:background="@color/heavierBG"
+            android:layout_marginBottom="30dp" />
+
+        <Button
+            android:text="Synchronize Oval"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/ovalData"
+            android:layout_weight="0.17"
+            android:background="@color/heavierBG"
+            android:paddingBottom="10dp"
+            android:layout_marginBottom="20dp"
+            android:onClick="onOvalSync"
+            android:textSize="24sp"
+            android:textColor="@color/lightBG" />
+
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/spinnerOval"
+            android:layout_weight="0.17"
+            android:background="@color/heavierBG"
+            android:layout_marginBottom="30dp" />
+
+        <ProgressBar
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/progressBar2"
+            android:layout_weight="0.17" />
+
+        <TextView
+            android:text="Success"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.17"
+            android:gravity="center"
+            android:textSize="30sp"
+            android:textStyle="normal|bold"
+            android:textColor="@color/heavierBG"
+            android:id="@+id/syncok" />
+    </LinearLayout>
+</android.support.design.widget.CoordinatorLayout>

@@ -1,0 +1,2 @@
+include ':app', ':talosmodule'
+project(':talosmodule').projectDir=new File(rootProject.projectDir, '../TalosModuleApp/talosmodule')

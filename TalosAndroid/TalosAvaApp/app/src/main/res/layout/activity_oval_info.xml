@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/lightBG">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:weightSum="1">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="47dp"
+            android:background="@color/heavierBG"
+            android:layout_marginTop="5dp">
+
+            <ImageButton
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/lovalbutton"
+                android:layout_weight="1"
+                android:src="@drawable/left"
+                android:scaleType="fitCenter"
+                android:background="@color/heavierBG"
+                android:padding="10dp"
+                android:onClick="onLeftClick" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Set 1"
+                android:id="@+id/ovalTitle"
+                android:layout_weight="0.5"
+                android:textAlignment="center"
+                android:padding="10dp" />
+
+            <ImageButton
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/rovalbutton"
+                android:layout_gravity="right"
+                android:layout_weight="1"
+                android:src="@drawable/right"
+                android:scaleType="fitCenter"
+                android:background="@color/heavierBG"
+                android:adjustViewBounds="true"
+                android:padding="10dp"
+                android:onClick="onRightClick" />
+
+        </LinearLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingLeft="10dp">
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="10dp"
+                    android:elevation="1dp">
+
+                    <TextView
+                        android:text="Pred Date: "
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/PRedDate"
+                        android:textSize="30sp"
+                        android:paddingLeft="5dp"
+                        android:paddingTop="5dp" />
+
+                    <TextView
+                        android:text="11.02.1999"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/predictedDate"
+                        android:textSize="30sp"
+                        android:paddingLeft="5dp"
+                        android:paddingTop="5dp" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </FrameLayout>
+
+        <com.github.mikephil.charting.charts.LineChart
+            android:id="@+id/linechartOval"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:background="@color/lightBG" />
+    </LinearLayout>
+</RelativeLayout>

@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">Talos Ava App</string>
+    <string name="edit_message">Enter a message</string>
+    <string name="button_send">Send</string>
+    <string name="action_settings">Setting</string>
+
+
+    <!--Talos Metadata-->
+    <string name="server_client_id">GOOGLE_SIGN_IN_SERVER_ID</string>
+    <string name="TalosCloudAddr">TALOS_CLOUD_ADDR</string>
+    <string name="TalosCloudPORT">8080</string>
+
+
+
+    <string name="title_activity_sync_actibity">Sync</string>
+    <string-array name="data_files">
+        <item>data1</item>
+        <item>data2</item>
+        <item>data3</item>
+        <item>data4</item>
+        <item>data5</item>
+        <item>data6</item>
+        <item>data7</item>
+        <item>data8</item>
+        <item>data9</item>
+        <item>data10</item>
+    </string-array>
+    <string-array name="oval_files">
+        <item>set1</item>
+        <item>set2</item>
+        <item>set3</item>
+        <item>set4</item>
+    </string-array>
+    <string name="title_activity_my_shares">MyShares</string>
+    <string name="title_activity_oval">OvalActivity</string>
+</resources>
