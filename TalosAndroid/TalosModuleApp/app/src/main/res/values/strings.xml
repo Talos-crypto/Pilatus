@@ -32,8 +32,12 @@
     <string name="title_activity_data_sensor">SensorOverview</string>
     <string name="title_activity_values">SensorValues</string>
 
+    <!-- Talos Constants! Have to be set beforehand -->
+    <string name="Google_Client_ID">SERVER_CLIENT_ID</string>
+    <string name="TalosServerAddr">TALOS_SERVER_ADDR</string>
+    <string name="TalosPort">8080</string>
 
-    <string name="Google_Client_ID">792880799776-2h12n12vl1bke8pp2jli4obnrjvp6fe6.apps.googleusercontent.com</string>
+
     <string name="title_activity_login">LoginActivity</string>
 
 </resources>

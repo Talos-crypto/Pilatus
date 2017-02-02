@@ -44,14 +44,11 @@ public class DBInterfaceHolder {
 
     private static DBStoreInterface store = null;
 
-    private static final String SERVER_URL = "ec2-54-93-54-190.eu-central-1.compute.amazonaws.com";
-    //private static final String SERVER_URL = "lubudevelop.com";
-    private static final int SERVER_PORT = 8181;
 
 
     public static void init(Context cont, int cert) throws TalosModuleException {
         if(store==null) {
-            TalosModuleSensor mod = new TalosModuleSensor(cont, SERVER_URL, SERVER_PORT, R.raw.cert10);
+            TalosModuleSensor mod = new TalosModuleSensor(cont, cont.getString(R.string.TalosServerAddr), Integer.valueOf(cont.getString(R.string.TalosPort)));
             store = new DBStoreInterface(mod);
         }
     }

@@ -13,8 +13,6 @@ if [ "" == "$PKG_GMP_OK" ]; then
   sudo apt-get install libgmp3-dev
 fi
 
-sudo apt-get install libgmp3-dev
-
 git clone https://github.com/relic-toolkit/relic.git
 
 cd relic 

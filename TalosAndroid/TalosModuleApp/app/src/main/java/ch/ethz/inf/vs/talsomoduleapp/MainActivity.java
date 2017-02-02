@@ -149,11 +149,11 @@ public class MainActivity extends ActionBarActivity implements GoogleApiClient.O
 
     private void initDBConnection() {
         Context con = this.getApplicationContext();
-        try {
+        /*try {
             DBInterfaceHolder.init(con, R.raw.sensys6);
         } catch (TalosModuleException e) {
             e.printStackTrace();
-        }
+        }*/
     }
 
     public void onBleSensors(View v) {
