@@ -29,11 +29,11 @@ As mentioned above we provide three example Application. In this section, we foc
 
 4. Put the service google-services.json file in the [app](Talos-Android/TalosAndroid/TalosModuleApp/app) directory of the project.
 
-5. Fill in the missing metadata in the [strings.xml](Talos-Android/TalosAndroid/TalosModuleApp/app/src/main/res/values/strings.xml) android resource file. You should provide the IP/DNS address of your Talos Cloud Server and the Google Service API id for the web client (should look like this: blablabla.apps.googleusercontent.com). (!Important the server API key and not the client API key).
+5. Fill in the missing metadata in the [strings.xml](https://github.com/Talos-crypto/Talos-Android/blob/master/TalosAndroid/TalosModuleApp/app/src/main/res/values/strings.xml) android resource file. You should provide the IP/DNS address of your Talos Cloud Server and the Google Service API id for the web client (should look like this: blablabla.apps.googleusercontent.com). (!Important the server API key and not the client API key).
 
 6. Also, edit the web client id in the BE config file located in /glassfish4/glassfish/domains/domain1/config/app_name.properties on your Talos Cloud Server.
 
 7. Deploy your application on the arm based smartphone. (!Only ARM architecture supported for easy setup, native libraries are precompiled for arm based systems)
 
-The setup procedure is similar for the Fitbit and AvaApp. There is a small exception for the Fitbit app. In order to get the data from your Fitbit account, you have to [register](https://dev.fitbit.com/) for using the Fitbit API. The provided key has to be added to the [strings.xml](Talos-Android/TalosAndroid/TalosFitbitApp/app/src/main/res/values/strings.xml) file.
+The setup procedure is similar for the Fitbit and AvaApp. There is a small exception for the Fitbit app. In order to get the data from your Fitbit account, you have to [register](https://dev.fitbit.com/) for using the Fitbit API. The provided key has to be added to the [strings.xml](https://github.com/Talos-crypto/Talos-Android/blob/master/TalosAndroid/TalosFitbitApp/app/src/main/res/values/strings.xml) file.
 
