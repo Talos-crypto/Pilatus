@@ -10,26 +10,19 @@ This repository contains serveral parts of the talos framwork. The individual pa
 ### TalosAndroid
 The TalosAndroid folder contains the three example apps the [Sensor App](https://github.com/Talos-crypto/Talos-Android/tree/master/TalosAndroid/TalosModuleApp), the [Fitbit App](https://github.com/Talos-crypto/Talos-Android/tree/master/TalosAndroid/TalosFitbitApp) and the [Ava Health App](https://github.com/Talos-crypto/Talos-Android/tree/master/TalosAndroid/TalosAvaApp). Each of this apps uses the talos andoird library for querying and inserintg encrypted to the cloud. The module can be found [here](https://github.com/Talos-crypto/Talos-Android/tree/master/TalosAndroid/TalosModuleApp/talosmodule). We implemented and optimized the following ciphers for Android (partly native in C and Java):
 
-*optimized additive homomorphic EC-ELGamal
-
-*proxy-re-encryption (PRE) (allows addition and sharing)
-
-*mutable order-preserving-ecnryption mOPE (range queries)
-
-*Paillier (for comparison to EC-ElGamal (native + Java))
+* optimized additive homomorphic EC-ELGamal
+* proxy-re-encryption (PRE) (allows addition and sharing)
+* mutable order-preserving-ecnryption mOPE (range queries)
+* Paillier (for comparison to EC-ElGamal (native + Java))
 
 ### TalosCiphers
 This folder contains experimental code, and contains some ciphers that we were evaluating. 
 
-*additive homomorphic EC-ELGamal in C implemented with relic and wrapper for Java+Android
-
-*proxy-re-encryption (PRE) in C implemented with relic and wrapper for Java+Android
-
-*a key homomorphic cipher
-
-*experimental code with ORE, an order preserving scheme
-
-*Pollard Kangoroo in C 
+* additive homomorphic EC-ELGamal in C implemented with relic and wrapper for Java+Android
+* proxy-re-encryption (PRE) in C implemented with relic and wrapper for Java+Android
+* a key homomorphic cipher
+* experimental code with ORE, an order preserving scheme
+* Pollard Kangoroo in C 
 
 ### TalosCloud 
 In the TalosCloud folder are the java web application and the MySQL user defined functions (UDF's). The Java application implements the TalosCloud logic and provides a REST api for the android libary. The UDF's are used for the aggreagation and operations over the encrypted data. 
