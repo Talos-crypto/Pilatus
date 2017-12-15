@@ -13,11 +13,11 @@ SENSOR_DB_NAME="SensorAppDB"
 echo "glassfish 4 must be running"
 
 echo "setup glassfish backend applications"
-bash $LOCAL_PATH/deployTalosBEApplication.sh $FITBIT_APP_NAME $FITBIT_DB_NAME
+bash $LOCAL_PATH/TalosHelper/deployTalosBEApplication.sh $FITBIT_APP_NAME $FITBIT_DB_NAME
 
-bash $LOCAL_PATH/deployTalosBEApplication.sh $AVA_APP_NAME $AVA_DB_NAME
+bash $LOCAL_PATH/TalosHelper/deployTalosBEApplication.sh $AVA_APP_NAME $AVA_DB_NAME
 
-bash $LOCAL_PATH/deployTalosBEApplication.sh $SENSOR_APP_NAME $SENSOR_DB_NAME
+bash $LOCAL_PATH/TalosHelper/deployTalosBEApplication.sh $SENSOR_APP_NAME $SENSOR_DB_NAME
 
 echo "setup databases"
 echo "login to mysql db as root"

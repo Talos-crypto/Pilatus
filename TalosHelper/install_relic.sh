@@ -3,6 +3,7 @@ PKG_CMAKE_OK=$(dpkg-query -W --showformat='${Status}\n' cmake | grep "install ok
 echo Checking for cmake: $PKG_CMAKE_OK
 if [ "" == "$PKG_CMAKE_OK" ]; then
   echo "No cmake. Setting up cmake."
+  sudo apt-get install g++
   sudo apt-get install cmake
 fi
 
